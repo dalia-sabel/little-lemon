@@ -1,0 +1,575 @@
+/* =========================
+   Little Lemon - Responsive CSS
+   ========================= */
+
+:root {
+  --green: #495e35;
+  --green-dark: #344627;
+  --yellow: #f4ce14;
+  --cream: #fffdf7;
+  --muted: #687164;
+  --border: #e1e5d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #252820;
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.site-wrapper {
+  width: 100%;
+  overflow-x: clip;
+}
+
+/* =========================
+   Header and navigation
+   ========================= */
+
+.site-header {
+  width: 100%;
+  min-height: 82px;
+  padding: 16px clamp(20px, 6vw, 90px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #ffffff;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--green-dark);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.lemon-icon {
+  font-size: 1.8rem;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2.2vw, 30px);
+}
+
+.site-header nav a {
+  color: #33382f;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* =========================
+   Hero section
+   ========================= */
+
+.hero {
+  width: 100%;
+  min-height: 390px;
+  padding: 56px clamp(20px, 9vw, 130px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+  align-items: center;
+  gap: clamp(30px, 6vw, 90px);
+  background: var(--green);
+  color: #ffffff;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 520px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--yellow);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  overflow-wrap: anywhere;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--yellow);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
+.hero h2 {
+  margin: 4px 0 18px;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 500;
+}
+
+.hero-description {
+  max-width: 460px;
+  margin: 0 0 26px;
+  color: #f2f3ed;
+  font-size: 1rem;
+}
+
+.primary-button,
+.submit-button {
+  min-height: 48px;
+  padding: 12px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  background: var(--yellow);
+  color: #20251a;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.primary-button:hover,
+.submit-button:hover {
+  background: #ffdc38;
+  transform: translateY(-1px);
+}
+
+.primary-button:focus-visible,
+.submit-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* Decorative food illustration */
+
+.hero-art {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  min-height: 270px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border-radius: 24px;
+  background: #f5eedb;
+  color: var(--green-dark);
+  text-align: center;
+}
+
+.food-plate {
+  width: clamp(150px, 19vw, 220px);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 12px solid #ffffff;
+  border-radius: 50%;
+  background: #e5cba0;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.art-lemon {
+  position: absolute;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.lemon-one {
+  top: 14px;
+  left: 16px;
+}
+
+.lemon-two {
+  right: 16px;
+  bottom: 45px;
+}
+
+.hero-art p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   Reservation section
+   ========================= */
+
+.booking-section {
+  width: min(100% - 40px, 1000px);
+  margin: 0 auto;
+  padding: 76px 0;
+}
+
+.booking-heading {
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.booking-heading .eyebrow {
+  color: var(--green);
+}
+
+.booking-heading h2 {
+  margin: 0 0 10px;
+  color: var(--green-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+}
+
+.booking-heading > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.booking-form {
+  width: 100%;
+  padding: clamp(20px, 4vw, 38px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 35px rgb(52 70 39 / 7%);
+}
+
+.form-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  color: #30382a;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 11px 12px;
+  border: 1px solid #cbd2c3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #252820;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--green);
+  outline: 3px solid rgb(73 94 53 / 18%);
+}
+
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.error-message {
+  margin: 0;
+  color: #b42318;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 52px;
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+
+.success-message {
+  grid-column: 1 / -1;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #a5c99b;
+  border-radius: 10px;
+  background: #f0f8ed;
+  color: #294a25;
+  overflow-wrap: anywhere;
+}
+
+.success-message h3 {
+  margin: 0 0 8px;
+}
+
+.success-message p {
+  margin: 8px 0 0;
+}
+
+/* =========================
+   About and menu sections
+   ========================= */
+
+.about-section {
+  padding: 64px 20px;
+  background: #f3f0e6;
+  text-align: center;
+}
+
+.about-section .eyebrow {
+  color: var(--green);
+}
+
+.about-section h2,
+.menu-note h2 {
+  margin: 0 auto 16px;
+  color: var(--green-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.about-section > p:not(.eyebrow),
+.menu-note p {
+  width: min(100%, 650px);
+  margin: 0 auto 20px;
+  color: var(--muted);
+}
+
+.about-section a {
+  display: inline-block;
+  color: var(--green-dark);
+  font-weight: 800;
+  text-underline-offset: 4px;
+}
+
+.menu-note {
+  padding: 56px 20px;
+  text-align: center;
+}
+
+.menu-note p {
+  margin-bottom: 0;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.site-footer {
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-dark);
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer-brand {
+  color: #ffffff;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #e5e9df;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   Tablets
+   ========================= */
+
+@media (max-width: 900px) {
+  .site-header {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .hero {
+    padding: 48px 32px;
+    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr);
+  }
+
+  .hero-art {
+    min-height: 240px;
+  }
+
+  .booking-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+
+/* =========================
+   Mobile phones
+   ========================= */
+
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 20px;
+  }
+
+  .site-header {
+    min-height: auto;
+    padding: 18px 16px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .site-header nav {
+    width: 100%;
+    justify-content: center;
+    gap: 10px 18px;
+  }
+
+  .site-header nav a {
+    font-size: 0.88rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 40px 20px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .hero-content {
+    max-width: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+  }
+
+  .hero-description {
+    font-size: 0.96rem;
+  }
+
+  .hero-art {
+    min-height: 230px;
+    padding: 24px 16px;
+  }
+
+  .booking-section {
+    width: calc(100% - 32px);
+    padding: 44px 0;
+  }
+
+  .booking-heading {
+    margin-bottom: 24px;
+  }
+
+  .booking-form {
+    padding: 20px 16px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    border-radius: 14px;
+  }
+
+  .submit-button,
+  .success-message {
+    grid-column: 1;
+  }
+
+  .about-section {
+    padding: 46px 20px;
+  }
+
+  .menu-note {
+    padding: 42px 20px;
+  }
+
+  .site-footer {
+    padding: 28px 16px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 360px) {
+  .site-header nav {
+    gap: 8px 12px;
+  }
+
+  .site-header nav a {
+    font-size: 0.82rem;
+  }
+
+  .hero {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .booking-form {
+    padding: 16px 12px;
+  }
+
+  .food-plate {
+    width: 145px;
+    border-width: 9px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
